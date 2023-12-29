@@ -4,7 +4,6 @@ function randomIntFromInterval(min, max) {
 
 const GameStep = { FIRST_CHOSE: 1, SECOND_CHOSE: 2, GAME_RESULT: 3 };
 
-
 class Game {
     constructor() {
         this.init_game()
@@ -37,8 +36,8 @@ class Game {
             if (i !== this.win_door) this.lose_doors.push(i)
         }
         this.first_door_number = null
-        console.log(this.win_door)
-        console.log(this.lose_doors)
+        console.log("Выиграшная дверь:", this.win_door)
+        console.log("Проишрышные двери:", this.lose_doors.join(", "))
     }
 
     door_event(door){
@@ -96,13 +95,10 @@ class Game {
         }
 
         if (this.game_step === GameStep.GAME_RESULT) {
-            console.log("12234")
             this.init_html()
             this.init_game()
             this.game_step = GameStep.FIRST_CHOSE
-
         }
-
     }
 }
 
@@ -111,8 +107,5 @@ let game = new Game()
 for (const element of document.querySelectorAll(".door")) {
     element.addEventListener('click', function () {
         game.door_event(this)
-        let door_status = element.getAttribute("data-game_door")
-        // console.log(door_status, element)
-
     })
 }
