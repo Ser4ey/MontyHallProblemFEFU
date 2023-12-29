@@ -29,13 +29,11 @@ body {
     cursor: pointer;
     transition:transform .2s;
     border-radius: 3px;
-    background: url("./door.jpg") center center no-repeat;
-    background-size: contain;
+
+    /*background: url("./door.jpg") center center no-repeat;*/
+    /*background-size: contain;*/
 }
-.door--open {
-    background-image: url("./door-open.png");
-    height: 400px;
-}
+
 .door p {
     background-color: #fff;
     padding: 5px 10px;
@@ -105,5 +103,22 @@ body {
 [data-game_door="no-choose"] {
     background: url("./door.jpg") center center no-repeat;
     background-size: contain;
-    /*background-color: #95A8C0;*/
+}
+
+[data-game_door="choose"] {
+    background: url("./door.jpg") center center no-repeat;
+    background-size: contain;
+    height: 400px;
+}
+
+[data-game_door="open-lose"] {
+    background: url("./door-open.png") center center no-repeat;
+    background-size: contain;
+    height: 425px;
+}
+
+[data-game_door="open-win"] {
+    background: url("./door-open-win.png") center center no-repeat;
+    background-size: contain;
+    height: 425px;
 }
