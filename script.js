@@ -14,7 +14,6 @@ class Game {
         for (const element of document.querySelectorAll(".door")) {
             element.setAttribute("data-game_door", "no-choose")
         }
-        // document.querySelector(".info_text").textContent = "Выберите дверь!"
         document.querySelector(".info").innerHTML = '<div class="info_text">Выберите дверь!</div>'
     }
     init_stats_html(){
@@ -55,7 +54,6 @@ class Game {
                 open_door_number = this.lose_doors[open_door_number_index] - 0
             }
             document.querySelectorAll(".door")[open_door_number-1].setAttribute("data-game_door", "open-lose")
-            // document.querySelector(".info_text").textContent = "Изменить выбор?"
             document.querySelector(".info").innerHTML = '<div class="info_text">Изменить выбор?</div>'
 
             this.game_step = GameStep.SECOND_CHOSE
@@ -76,7 +74,6 @@ class Game {
             let final_door_number = door.getAttribute("data-door-number") - 0
 
             if (door.getAttribute("data-door-number")-0 === this.win_door) {
-                // document.querySelector(".info_text").textContent = "Вы выиграли"
                 if (this.first_door_number === final_door_number) {
                     document.querySelector(".info").innerHTML = '<div class="info_text info_text-win">Вы не поменяли дверь и ВЫИГРАЛИ🚗</div>'
                     localStorage.setItem("not_change_win", localStorage.getItem("not_change_win")-0+1)
@@ -85,7 +82,6 @@ class Game {
                     localStorage.setItem("change_win", localStorage.getItem("change_win")-0+1)
                 }
             } else {
-                // document.querySelector(".info_text").textContent = "Вы проиграли"
                 if (this.first_door_number === final_door_number) {
                     document.querySelector(".info").innerHTML = '<div class="info_text info_text-lose">Вы не поменяли дверь и ПРОИГРАЛИ!</div>'
                     localStorage.setItem("not_change_lose", localStorage.getItem("not_change_lose")-0+1)
