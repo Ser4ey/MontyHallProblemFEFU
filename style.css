@@ -52,6 +52,18 @@ body {
     justify-content: center;
 }
 
+.info_text {
+    font-size: 20px;
+}
+
+.info_text-win {
+    color: #c420c7;
+}
+.info_text-lose {
+    color: #b20a18;
+}
+
+
 .stats {
     padding: 30px 0;
     display: flex;
@@ -128,3 +140,5 @@ body {
     height: 100%;
     position: relative;
 }
+
+
