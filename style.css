@@ -106,7 +106,7 @@ body {
 }
 
 [data-game_door="choose"] {
-    background: url("./door.jpg") center center no-repeat;
+    background: url("./selected-door.png") center center no-repeat;
     background-size: contain;
     height: 400px;
 }
