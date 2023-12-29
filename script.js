@@ -72,9 +72,6 @@ class Game {
             }
 
             let final_door_number = door.getAttribute("data-door-number") - 0
-            // console.log("Первый выбор:", this.first_door_number)
-            // console.log("Второй выбор:", final_door_number)
-            // console.log("Результат:", door.getAttribute("data-door-number")-0 === this.win_door)
 
             if (door.getAttribute("data-door-number")-0 === this.win_door) {
                 document.querySelector(".info_text").textContent = "Вы выиграли"
@@ -95,11 +92,17 @@ class Game {
             localStorage.setItem("total_games", localStorage.getItem("total_games")-0+1)
             this.game_step = GameStep.GAME_RESULT
             this.init_stats_html()
+            return;
+        }
+
+        if (this.game_step === GameStep.GAME_RESULT) {
+            console.log("12234")
+            this.init_html()
+            this.init_game()
+            this.game_step = GameStep.FIRST_CHOSE
 
         }
 
-
-        // door.addEventListener()
     }
 }
 
