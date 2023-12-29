@@ -1,0 +1,109 @@
+body, html {
+    margin: 0;
+}
+body {
+    font-family: "Calibri", sans-serif;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+}
+
+.doors {
+    padding: 20px 0;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    background: #215891;
+    height: 450px;
+    align-items: center;
+}
+.door {
+    width: 200px;
+    height: 365px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 25px;
+    cursor: pointer;
+    transition:transform .2s;
+    border-radius: 3px;
+    background: url("./door.jpg") center center no-repeat;
+    background-size: contain;
+}
+.door--open {
+    background-image: url("./door-open.png");
+    height: 400px;
+}
+.door p {
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+.door:hover {
+   transform: scale(1.03);
+}
+
+.info {
+    min-height: 100px;
+    background: papayawhip;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1300px;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.stats_line {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.stats_line_title--total {
+    font-weight: 700;
+}
+.stats_line_title {
+    font-size: 25px;
+    font-weight: 700;
+}
+.stats_line--box {
+    border: 1px solid #eee;
+    padding: 20px;
+}
+.stats_block {
+    display: flex;
+    gap: 20px;
+}
+
+.stats_info {
+    padding: 6px 19px;
+    border-radius: 4px;
+}
+
+.stats_info-lose {
+    background: rgba(227, 85, 85, 0.56);
+}
+.stats_info-win {
+    background: rgba(88, 231, 56, 0.56);
+}
+
+
+[data-game_door="no-choose"] {
+    background: url("./door.jpg") center center no-repeat;
+    background-size: contain;
+    /*background-color: #95A8C0;*/
+}
